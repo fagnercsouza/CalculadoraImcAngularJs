@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="./api.js"></script>
+    <link rel="stylesheet" href="api.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container" ng-controller="calculaImc">
+        <h1>IMC</h1>
+        
+        <input class="het " type="text" ng-model="peso" placeholder="Informe seu peso...">
+        <input class="het " type="text" ng-model="altura" placeholder="Informe sua altura...">
+        <button class="het btn"  ng-click='calculo()'>Calcular</button>
+        <p class="resultado">Resultado: {{resultado | number:2}} <span>{{info}}</span></p>
+        
+    </div>
+    <div class="contente">
+        <table>
+            <thead>
+                <th>IMC</th>
+                <th>Resultado</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Menos que 18.50</td>
+                    <td>Abaixo do peso</td>
+                </tr>
+                <tr>
+                    <td>Entre 18.5 e 24.9 </td>
+                    <td>Peso normal</td>
+                </tr>
+            </tbody>
+        
+        </table>
+    </div>
+
+</body>
+</html>
